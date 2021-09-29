@@ -42,14 +42,14 @@ class Database{
 
     // metodo responsavel por executar querys denttro do banco
     public function execute($query, $params = []){
-try {
-   $statement = $this->connection->prepare($query);
-   $statement->execute($params);
-   return $statement;
-} catch (PDOException $e) {
-    die('ERROR: ' .$e->getMessage());
-}
-    }
+        try {
+        $statement = $this->connection->prepare($query);
+        $statement->execute($params);
+        return $statement;
+        } catch (PDOException $e) {
+            die('ERROR: ' .$e->getMessage());
+        }
+            }
 
 
     // metodo responsavel por inserir dados no banco
@@ -68,7 +68,9 @@ try {
         //retorna o Id inserido
         return $this->connection->lastInsertId();
        
-    }
+        }
+
+
     // metodo responsavel por executar consulta ao banco
     public function select($where = null, $order = null, $limit = null, $fields = '*'){
         //dados da query
@@ -83,17 +85,17 @@ try {
         return $this->execute($query);
       }
 
+
       // metodo responsavel por executar a atualizaçã da vaga no banco
       public function update($where,$values){
         // dados da query
         $fields = array_keys($values);
 
-
-
         $query = 'UPDATE '. $this->table.' SET ' .implode('=?,',$fields).'=? WHERE ' .$where;
+        
         return $this->execute($query,array_values($values));
-
       }
+
 
       // metodo responsavvel por excluir dados do banco
       public function delete($where){
