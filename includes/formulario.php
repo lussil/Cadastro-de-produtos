@@ -26,7 +26,7 @@
             <button type="submit" class="btn btn-success">Enviar</button>
             <a href="index.php" class="btn btn-primary"> Voltar</a>
         </div>
-        <div class="alert alert-danger" role="alert">
+        <div class="alert alert-warning" role="alert">
             <p> <?php echo $error ?> </p>
         </div>
     </form>

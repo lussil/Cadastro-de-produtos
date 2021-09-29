@@ -5,7 +5,11 @@ use App\Entity\Produto;
 use App\Database;
 
 
-if (empty($_POST['descricao']) and empty($_POST['preco']) and empty($_POST['quantidade'])  ) {
+// criar um botão submit para verificar se foi atribuido e dps fazer esse if
+
+$error = [""];
+
+if (empty($_POST['descricao']) or empty($_POST['preco']) or empty($_POST['quantidade'])  ) {
     $error = "preencha todos os campos";  
 } else {
 
