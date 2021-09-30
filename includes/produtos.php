@@ -1,4 +1,25 @@
+<?php 
+
+$mensagem = '';
+
+if (isset($_GET['status'])) {
+    switch ($_GET['status']) {
+        case 'success':
+            $mensagem = '<div  class="alert alert-success"> Ação executada com sucesso</div>';
+            break;
+
+            case 'error':
+                $mensagem = '<div  class="alert alert-danger">Ação Não executada</div>';
+                break;
+    
+    }
+}
+
+?>
+
 <div class="container col-8">
+
+    <?= $mensagem ?>
 
     <a href="cadastrar.php" class="btn btn-primary"> Novo produto</a>
     <table class="table ">
@@ -12,8 +33,19 @@
             </tr>
         </thead>
         <tbody>
-           
-                <?=$resultados?>
+
+
+
+
+            <?php     $resultados = strlen($resultados) ? $resultados : '<tr>
+                                                       <td colspan="6" class="text-center">
+                                                              Nenhuma produto cadastrado </td>
+                                                                         </tr>';
+
+            ?>
+
+            <?=$resultados?>
+            <main>
 
         </tbody>
     </table>
@@ -21,6 +53,4 @@
     <a href="editar.php?id='.$produto->id.'"> <button type="button" class="btn btn-warning">alterar</button> </a>
     <a href="ver.php?id='.$produto->id.'"> <button type="button" class="btn btn-primary">consultar </button> </a>
     <a href="excluir.php?id='.$produto->id.'"> <button type="button" class="btn btn-danger">Excluir</button> </a> -->
-
-
 </div>

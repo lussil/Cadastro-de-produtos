@@ -12,7 +12,7 @@
 
         <div class="form-floating mb-3 col-md-6">
             <input type="number" class="form-control" id="preco" step="any" name="preco"value="<?=$obProduto->preco ?>"> 
-            <label for="preco"> </label> 
+            <label for="preco"> Preço</label> 
            
         </div>
 
