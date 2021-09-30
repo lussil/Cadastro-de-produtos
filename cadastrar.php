@@ -4,20 +4,22 @@ require __DIR__ . '/vendor/autoload.php';
 use App\Entity\Produto;
 use App\Database;
 
+define('TITLE' , 'Cadastrar Produto');
 
-// criar um botão submit para verificar se foi atribuido e dps fazer esse if
-
-$error = [""];
+$obProduto = new Produto;
 
 if (empty($_POST['descricao']) or empty($_POST['preco']) or empty($_POST['quantidade'])  ) {
-    $error = "preencha todos os campos";  
+    
+    $error = '<div class="alert alert-warning" role="alert"> preencha todos os campos <div>' ;
+    
+     
 } else {
 
     $descricao      = $_POST['descricao'];
     $preco          = $_POST['preco'];
     $quantidade     = $_POST['quantidade'];
 
-    $obProduto = new Produto;
+   
 
     $obProduto->descricao = $descricao;
     $obProduto->preco = $preco;

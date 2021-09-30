@@ -18,8 +18,8 @@ use \App\Entity\Produto;
 
                     <div class="btn-group" role="group" aria-label="Basic mixed styles example">
                     <a href="editar.php?id='.$produto->id.'" class="btn btn-warning" > Alterar </a>
-                    <a href="ver.php?id='.$produto->id.'" class="btn btn-primary"> Consultar  </a>
-                    <a href="excluir.php?id='.$produto->id.'"> <button type="button" class="btn btn-danger">Excluir</button> </a>
+                    <a href="consultar.php?id='.$produto->id.'" class="btn btn-primary"> Consultar  </a>
+                    <a href="excluir.php?id='.$produto->id.'" class="btn btn-danger"> Excluir </a>
 
                     </div>
                     

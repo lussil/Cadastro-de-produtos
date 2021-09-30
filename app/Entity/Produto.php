@@ -41,6 +41,17 @@ class Produto{
         return true;
     }
          
+
+        public function atualizar(){
+        return (new Database('produtos'))->update('id = '.$this->id,[
+
+            'descricao'     => $this->descricao,
+            'preco'         => $this->preco,
+            'quantidade'    => $this->quantidade,
+            'data'          => $this->data
+                                                                ]);
+    }
+
     
         // metodo responsavel por excluir vaga
         public function excluir(){
